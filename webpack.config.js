@@ -11,7 +11,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
     mode: "development",
     devtool: false,
-    entry: "./src/index.js",
+    // entry: "./src/index.js",
+    entry: "./src/style-loader-entry/index.js",
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "[name].js",
@@ -25,6 +26,14 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.less$/,
+                use: [
+                    'style-loader',
+                    'less-loader'
+                ]
+                // css-loader 是来处理 import 和 url
+            },
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
