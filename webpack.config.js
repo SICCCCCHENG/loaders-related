@@ -9,43 +9,67 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 //      resolveLoader.modules指定一个目录,找loader时候会先去找个目录下查找
 
 module.exports = {
-  mode: "development",
-  devtool: false,
-  entry: "./src/index.js",
-  output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "[name].js",
-  },
-  resolveLoader: {
-    // alias: {
-    //     'babel-loader': path.resolve(__dirname, 'loaders/babel-loader.js')  // 方式二
-    // },
-    // 先去loaders文件下找, 找不到则去node_modules下找
-    modules: [path.resolve('loaders'), 'node_modules']   // 方式三
-  },
-  module: {
-    rules: [
-        {
-            test: /\.js$/,
-            exclude: /node_modules/,
-            use: {
-                // loader: 'babel-loader',  // 原生loader
-                // loader: 'babel-loader',  // 方式二 
-                loader: 'babel-loader',  // 方式三
-                // loader: path.resolve(__dirname, 'loaders/babel-loader.js'),  // 方式一
-                options: {
-                    // es6 -> es5
-                    presets: ['@babel/preset-env']
-                }
+    mode: "development",
+    devtool: false,
+    entry: "./src/index.js",
+    output: {
+        path: path.resolve(__dirname, "dist"),
+        filename: "[name].js",
+    },
+    resolveLoader: {
+        // alias: {
+        //     'babel-loader': path.resolve(__dirname, 'loaders/babel-loader.js')  // 方式二
+        // },
+        // 先去loaders文件下找, 找不到则去node_modules下找
+        modules: [path.resolve('loaders'), 'node_modules']   // 方式三
+    },
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                // use: {
+                //     // loader: 'babel-loader',  // 原生loader
+                //     // loader: 'babel-loader',  // 方式二 
+                //     loader: 'babel-loader',  // 方式三
+                //     // loader: path.resolve(__dirname, 'loaders/babel-loader.js'),  // 方式一
+                //     options: {
+                //         // es6 -> es5
+                //         presets: ['@babel/preset-env']
+                //     }
+                // }
+
+                use: [
+                    {
+                        // loader: 'babel-loader',  // 原生loader
+                        // loader: 'babel-loader',  // 方式二 
+                        loader: 'babel-loader1',  // 方式三
+                        // loader: path.resolve(__dirname, 'loaders/babel-loader.js'),  // 方式一
+                        options: {
+                            // es6 -> es5
+                            presets: ['@babel/preset-env']
+                        }
+                    },
+                    {
+                        // loader: 'babel-loader',  // 原生loader
+                        // loader: 'babel-loader',  // 方式二 
+                        loader: 'babel-loader2',  // 方式三
+                        // loader: path.resolve(__dirname, 'loaders/babel-loader.js'),  // 方式一
+                        options: {
+                            // es6 -> es5
+                            presets: ['@babel/preset-env']
+                        }
+                    },
+
+                ]
             }
-        }
+        ],
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: "./src/index.html",
+        }),
     ],
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: "./src/index.html",
-    }),
-  ],
 };
 
 
