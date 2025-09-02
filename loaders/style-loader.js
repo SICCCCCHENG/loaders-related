@@ -73,3 +73,9 @@ loader 根据返回值可以分为两种，一种是返回 js 代码（一个 mo
 /*
   当想把两个返回commonjs代码的loader 级联使用, 就需要pitch和!!
 */
+
+
+// css 文件中import进来的less文件是否走less-loader?
+// less文件里引入less文件, import语句的话,less就直接处理了
+
+// 正常项目中可以直接require('!!xxx-loader!file')

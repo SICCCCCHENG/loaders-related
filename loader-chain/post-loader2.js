@@ -3,6 +3,6 @@ function loader(source) {
   return source + "//post-loader2";
 }
 loader.pitch = function () {
-  console.log('post-loader1-pitch');
+  console.log('post-loader2-pitch');
 }
 module.exports = loader;
