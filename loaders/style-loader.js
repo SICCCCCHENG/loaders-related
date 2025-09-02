@@ -16,7 +16,10 @@ function normalize (path) {
 
 function loader(source) { }
 
-loader.pitch = function (remainingRequest) {
+loader.pitch = function (...args) {
+  console.log(args, 'args @@@');
+  
+  const remainingRequest = args[0]
   // /Users/sicheng/Desktop/Demo/learn/loaders/loaders/less-loader.js!/Users/sicheng/Desktop/Demo/learn/loaders/src/style-loader-entry/index.less
   console.log('remainingRequest @@@', remainingRequest);
   console.log('context @@@', this.context);   // 模块所在的目录, 可以解析其他成员模块上下文  index.less 所在的目录

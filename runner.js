@@ -1,7 +1,8 @@
 
 // loader 的叠加顺序 = post(后置)+inline(内联)+normal(正常)+pre(前置)
 
-const { runLoaders } = require("loader-runner");
+// const { runLoaders } = require("loader-runner");
+const { runLoaders } = require("./loader-runner2");
 const path = require("path");
 const fs = require("fs"); //webpack-dev-server启开发服务器的时候 memory-fs
 const entryFile = path.resolve(__dirname, "src/index.js");  // 要处理的文件
@@ -35,7 +36,6 @@ let rules = [
         use: ["post-loader1", "post-loader2"],
     },
 ];
-
 
 let parts = request.replace(/^-?!+/, "").split("!");
 let resource = parts.pop(); //弹出最后一个元素 entryFile=src/index.js
@@ -91,7 +91,7 @@ let resolveLoader = (loader) =>
 //把loader数组从名称变成绝对路径
 loaders = loaders.map(resolveLoader);
 
-
+debugger
 runLoaders(
     {
         resource, //你要加载的资源

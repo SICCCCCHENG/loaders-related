@@ -1,69 +1,24 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./loaders/less-loader.js!./src/style-loader-entry/index.less":
-/*!********************************************************************!*\
-  !*** ./loaders/less-loader.js!./src/style-loader-entry/index.less ***!
-  \********************************************************************/
-/***/ ((module) => {
+/***/ "./test/index.tsx":
+/*!************************!*\
+  !*** ./test/index.tsx ***!
+  \************************/
+/***/ (() => {
 
-module.exports = "#root {\n  color: red;\n}\n"
-
-/***/ }),
-
-/***/ "./src/style-loader-entry/index.less":
-/*!*******************************************!*\
-  !*** ./src/style-loader-entry/index.less ***!
-  \*******************************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
-
-
-      let styleCss = __webpack_require__(/*! !!../../loaders/less-loader.js!./index.less */ "./loaders/less-loader.js!./src/style-loader-entry/index.less");
-      let style = document.createElement("style");
-      style.innerHTML = styleCss;
-      document.head.appendChild(style);
-    
+throw new Error("Module parse failed: Unexpected token (14:9)\nFile was processed with these loaders:\n * ./loaders/code-inspect-loader.js\nYou may need an additional loader to handle the result of these loaders.\n|   const navigate = useNavigate();\n|   const [activeTab, setActiveTab] = React.useState(window.location.hash.includes(tab_map[2]) ? 2 : 1);\n>   return <div data-spm=\"c-governace-brand_keyword_audit_list\" className=\"aplus-auto-exp route-content keyword-audit\" path={props.path}>\n|       <div className=\"seller-title\">Brand Search Keyword Audit</div>\n|       <div className=\"home-box\">");
 
 /***/ })
 
 /******/ 	});
 /************************************************************************/
-/******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
 /******/ 	
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
-/******/ 		if (cachedModule !== undefined) {
-/******/ 			return cachedModule.exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
-/******/ 			// no module.loaded needed
-/******/ 			exports: {}
-/******/ 		};
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module doesn't tell about it's top-level declarations so it can't be inlined
+/******/ 	var __webpack_exports__ = {};
+/******/ 	__webpack_modules__["./test/index.tsx"]();
 /******/ 	
-/******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/ 	
-/************************************************************************/
-var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
-(() => {
-"use strict";
-/*!*****************************************!*\
-  !*** ./src/style-loader-entry/index.js ***!
-  \*****************************************/
-
-
-__webpack_require__(/*! ./index.less */ "./src/style-loader-entry/index.less");
-})();
-
 /******/ })()
 ;

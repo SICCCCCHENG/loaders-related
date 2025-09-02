@@ -12,7 +12,8 @@ module.exports = {
     mode: "development",
     devtool: false,
     // entry: "./src/index.js",
-    entry: "./src/style-loader-entry/index.js",
+    // entry: "./src/style-loader-entry/index.js",
+    entry: "./test/index.tsx",
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "[name].js",
@@ -71,7 +72,15 @@ module.exports = {
                     },
 
                 ]
-            }
+            },
+            {
+                test: /\.tsx$/,
+                enforce: "pre",
+                use: [
+                    'code-inspect-loader',
+                ]
+                // css-loader 是来处理 import 和 url
+            },
         ],
     },
     plugins: [
